@@ -1,0 +1,34 @@
+version: "2"
+services:
+  chat:
+    image: unihalle/ilias-chatserver:v5.3.12
+    build: .
+    restart: always
+    environment:
+        - ILIAS_AUTO_CONFIGURE=true
+        - ILIAS_CHAT_ADDRESS
+        - ILIAS_CHAT_CLIENT_NAME
+        - ILIAS_CHAT_AUTH_KEY
+        - ILIAS_CHAT_AUTH_SECRET
+        - ILIAS_CHAT_DB_HOST
+        - ILIAS_CHAT_DB_PORT
+        - ILIAS_CHAT_DB_NAME
+        - ILIAS_CHAT_DB_USER
+        - ILIAS_CHAT_DB_PASS
+    volumes:
+        - "./volumes/logs:/var/log/chat"
+        - "/etc/localtime:/etc/localtime:ro"
+    ports:
+      - "127.0.0.1:27019:27019"
+  reverse-proxy:
+    image: jwilder/nginx-proxy:alpine
+    environment:
+        - DEFAULT_HOST=$VIRTUAL_HOST
+    ports:
+      - "8080:80"
+      - "27019:443"
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs:ro
+
