@@ -26,7 +26,7 @@ ilias_auto_config_client() {
     ILIAS_CHAT_DB_NAME="${ILIAS_CHAT_DB_NAME}" \
     ILIAS_CHAT_DB_USER="${ILIAS_CHAT_DB_USER}" \
     ILIAS_CHAT_DB_PASS="${ILIAS_CHAT_DB_PASS}" \
-    node /ilias_auto_config_server.js > "${ILIAS_CHAT_CONFIG_DIR}"/client.cfg
+    node /ilias_auto_config_client.js > "${ILIAS_CHAT_CONFIG_DIR}"/client.cfg
 }
 
 ilias_chat_configure() {

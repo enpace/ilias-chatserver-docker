@@ -11,7 +11,7 @@
 			key: penv.ILIAS_CHAT_AUTH_KEY,
 			secret: penv.ILIAS_CHAT_AUTH_SECRET
 		},
-		dbSettings: {
+		database: {
 			type: "mysql",
 			host: penv.ILIAS_CHAT_DB_HOST,
 			port: penv.ILIAS_CHAT_DB_PORT,

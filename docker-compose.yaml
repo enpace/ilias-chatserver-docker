@@ -16,7 +16,7 @@ services:
         - ILIAS_CHAT_DB_USER
         - ILIAS_CHAT_DB_PASS
     volumes:
-        - "./volumes/logs:/var/log/chat"
+        - "./volumes/log:/var/log/chat"
         - "/etc/localtime:/etc/localtime:ro"
     ports:
       - "127.0.0.1:27019:27019"

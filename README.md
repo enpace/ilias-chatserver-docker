@@ -93,7 +93,7 @@ Inside the docker-compose network, the URL is `http://chat:27019/backend/Heartbe
 
 ### Using a proxy with HTTP basic auth and certificates
 
-This is a complete example illustrating the use with a reverse proxy and encryption inside a network managed by docker-compose. Please replace `$VIRTUAL_HOST` with an actual host name.
+This is an almost complete example [FIXME: nginx config for connection upgrade might be missing] illustrating the use with a reverse proxy and encryption inside a network managed by docker-compose. Please replace `$VIRTUAL_HOST` with an actual host name.
 
 ```
 # Copy https://raw.githubusercontent.com/uni-halle/ilias-chatserver-docker/develop/.env.example to your working directory and adjust the values or use the template above.
