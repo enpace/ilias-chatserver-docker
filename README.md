@@ -166,3 +166,29 @@ Chatserver Settings:
 * Client to Server Connection: If you run the chatserver behind a reverse proxy, the URL your ILIAS visitors can connect to should be specified here. It should really start with `https://` so their traffic is encrypted and private conversations stay private. For the above complete docker-compose example, this would be `https://$VIRTUAL_HOST`.
 * Deletion of old Messages: Correspond to ILIAS_CHAT_DELETION_* variables. You may specify values here for consistency but if you do not mount the generated configuration files to the chat server container, they ain't going to change anything.
 
+## For OPS
+
+Adding some load to the chat server to see how it performs *on a test system*:
+
+1. Open a couple of chat pages in ILIAS, maybe connect multiple users with multiple browsers
+2. Open the Web Console (in Chromium/FF [Ctrl]+[Shift]+[I])
+3. Insert the following JS snippet:
+
+```
+function pad(n, width, z) {
+   z = z || '0';
+   n = n + '';
+   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+
+var counter = 0,
+    $textInput = $('#submit_message_text'),
+    $submitButton = $('#submit_message');
+
+setInterval(function() {
+   $textInput
+      .val(pad(++counter, 4) + ' ' + Math.random());
+   $submitButton.click();
+}, 100);
+```
+
