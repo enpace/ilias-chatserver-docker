@@ -6,7 +6,6 @@ ilias_auto_config_server() {
   echo "Configuring server ..."
   env \
     ILIAS_CHAT_PORT="${ILIAS_CHAT_PORT}" \
-    ILIAS_CHAT_ADDRESS="${ILIAS_CHAT_ADDRESS-127.0.0.1}" \
     ILIAS_CHAT_LOG_DIR="${ILIAS_CHAT_LOG_DIR}" \
     ILIAS_CHAT_DELETION_MODE="${ILIAS_CHAT_DELETION_MODE-0}" \
     ILIAS_CHAT_DELETION_UNIT="${ILIAS_CHAT_DELETION_UNIT-years}" \

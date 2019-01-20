@@ -8,7 +8,7 @@
 	var settings = {
 		protocol: "http",
 		port: penv.ILIAS_CHAT_PORT,
-		address: penv.ILIAS_CHAT_ADDRESS,
+		address: "0.0.0.0",
 		log: penv.ILIAS_CHAT_LOG_DIR + "/chat.log",
 		error_log: penv.ILIAS_CHAT_LOG_DIR + "/chat_errors.log",
 		deletion_mode: penv.ILIAS_CHAT_DELETION_MODE,

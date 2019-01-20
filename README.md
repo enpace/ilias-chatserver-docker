@@ -25,9 +25,6 @@ Create the following file:
 
 `.env` (adjust the values):
 ```
-# IP-Address/FQN of Chat Server
-ILIAS_CHAT_ADDRESS=chat
-
 # Please enter a name for this ILIAS client.
 # The entered string must be globally unique.
 # Initially this value is set to the client
@@ -75,7 +72,6 @@ services:
     image: unihalle/ilias-chatserver:v5.3.12
     restart: always
     environment:
-        - ILIAS_CHAT_ADDRESS
         - ILIAS_CHAT_CLIENT_NAME
         - ILIAS_CHAT_AUTH_KEY
         - ILIAS_CHAT_AUTH_SECRET
@@ -111,7 +107,6 @@ services:
     build: .
     restart: always
     environment:
-        - ILIAS_CHAT_ADDRESS
         - ILIAS_CHAT_CLIENT_NAME
         - ILIAS_CHAT_AUTH_KEY
         - ILIAS_CHAT_AUTH_SECRET
@@ -157,7 +152,7 @@ General Settings:
 
 Chatserver Settings:
 
-* IP-Address/FQN of Chat Server: ILIAS_CHAT_ADDRESS; Note: You can override _client to chatserver_ and _ILIAS to chat server_ connection settings further down.
+* IP-Address/FQN of Chat Server: In order to bind to all networks, it is hardcoded to 0.0.0.0 in the container. Note: You can override _client to chatserver_ and _ILIAS to chat server_ connection settings further down.
 * Port of Chat Server: The port you have chosen for your chat server (e.g. as specified for the reverse proxy). Rarely used ports are often blocked by firewalls or proxy servers.
 * Sub-Directory: Only if you configured something different than the supplied defaults
 * Protocol: You may choose to let the Node.js server doing the HTTPS handling although I do not recommend that. Better use a reverse proxy. HTTPS through Node.js requires advanced configuration. You have to mount the certificate, key and dh-parameter into the ilias-chatserver container, as well as configuration (by default configuration is loaded from `/etc/chat/[client|server].cfg` in the container. Confer to [ILIAS//Modules/Chatroom/README.md](https://github.com/ILIAS-eLearning/ILIAS/blob/trunk/Modules/Chatroom/README.md) for how configuration should look like.

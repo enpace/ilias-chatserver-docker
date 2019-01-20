@@ -6,7 +6,6 @@ services:
     restart: always
     environment:
         - ILIAS_AUTO_CONFIGURE=true
-        - ILIAS_CHAT_ADDRESS
         - ILIAS_CHAT_CLIENT_NAME
         - ILIAS_CHAT_AUTH_KEY
         - ILIAS_CHAT_AUTH_SECRET
