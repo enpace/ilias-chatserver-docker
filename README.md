@@ -4,9 +4,9 @@ Docker-ized version of the [**ILIAS Chat Server**](https://github.com/ILIAS-eLea
 
 > ILIAS provides several classes to create and send Emails/Messages for different purposes.
 
-The ILIAS chat server is a Node.js server providing websocket connections for real-time chat in ILIAS LMS.
+The ILIAS chat server is a Node.js server providing web socket connections for real-time chat in ILIAS LMS.
 
-This Docker files / image aims to facilate setting up the chat server in an isolated environment, either as part of the docker(-compose) network on the same host as ILIAS, or distributed to another physical or virtual host.
+This Docker files / image aims to facilitate setting up the chat server in an isolated environment, either as part of the docker(-compose) network on the same host as ILIAS, or distributed to another physical or virtual host.
 
 * Code on [GitHub](https://github.com/uni-halle/ilias-chatserver-docker) ([Issues](https://github.com/uni-halle/ilias-chatserver-docker/issues))
 * Image on [Docker Hub](https://hub.docker.com/r/unihalle/ilias-chatserver)
