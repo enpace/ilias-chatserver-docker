@@ -5,7 +5,7 @@ LABEL maintainer="O: University of Halle (Saale) Germany; OU: ITZ, department ap
 ARG BUILD_NO
 
 ENV ILIAS_REPO="https://github.com/ILIAS-eLearning/ILIAS.git" \
-    ILIAS_TAG_OR_BRANCH="v5.3.12" \
+    ILIAS_TAG_OR_BRANCH="v5.3.21" \
     ILIAS_RUN_USER="ilias" \
     ILIAS_RUN_GROUP="ilias" \
     ILIAS_RUN_UID="800" \
