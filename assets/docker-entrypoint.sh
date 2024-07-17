@@ -44,7 +44,7 @@ ilias_chat_start_server() {
   echo "Starting up ILIAS chat server ..."
   exec gosu "${ILIAS_RUN_USER}:${ILIAS_RUN_GROUP}" \
 	"node" "${ILIAS_CHAT_HOME}/chat" \
-        "${ILIAS_CHAT_CONFIG_DIR}/server.cfg" "${ILIAS_CHAT_CONFIG_DIR}/client.cfg"
+        "${ILIAS_CHAT_CONFIG_DIR}/server.cfg" "${ILIAS_CHAT_CONFIG_DIR}/client.cfg" 
 }
 
 ilias_chat_configure
